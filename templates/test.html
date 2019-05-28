@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Модели в Django</title>
+</head>
+<body class="container">
+{#    <form method="POST" action="create/">#}
+{#        {% csrf_token %}#}
+{#        <p>#}
+{#            <label>Введите имя</label><br>#}
+{#            <input type="text" name="name" />#}
+{#        </p>#}
+{#        <p>#}
+{#            <label>Введите возраст</label><br>#}
+{#            <input type="number" name="age" />#}
+{#        </p>#}
+{#        <input type="submit" value="Сохранить" >#}
+{#    </form>#}
+{#    {% if people.count > 0 %}#}
+    <h2>Список компаний</h2>
+    <table>
+        <tr><th>Название компании</th><th>ИНН</th><th>ОГРН</th><th>КПП</th><th>Адрес</th><th>Юридический адрес</th><th>Телефон</th><th>Имя директора</th><th>Фамилия директора</th></tr>
+        {% for company in people %}
+        <tr><td>{{ company.name }}</td><td>{{ company.inn }}</td><td>{{ company.ogrn }}</td><td>{{ company.kpp }}</td><td>{{ company.address }}</td><td>{{ company.post_address }}</td><td>{{ company.phone }}</td><td>{{ company.name_director }}</td><td>{{ company.last_name_director }}</td></tr>
+        {% endfor %}
+    </table>
+{#    {% endif %}#}
+</body>
+</html>
